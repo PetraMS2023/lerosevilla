@@ -1,0 +1,238 @@
+/* Start Global Rules */
+
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+/* Start Var */
+
+:root{
+    --main-color:#B69B79;
+    --sec-color:#DBCDBC;
+    --main-back-color:linear-gradient(to left, rgba(220, 208, 192, 0.26), rgba(182, 155, 121, 0.03));;
+}
+
+/* End Var */
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: sans-serif;
+    background-image: var(--main-back-color);
+}
+
+
+/* Start Contanier */
+
+.contanier{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px){
+    .contanier{
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px){
+    .contanier{
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px){
+    .contanier{
+        width: 1170px;
+    }
+}
+
+/* End Contanier */
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    width: 50px;
+    height: 50px;
+}
+
+.top{
+    top: 150px;
+}
+
+/* Start Mage Menu */
+
+.menu-icon{
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    /* position: fixed; */
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+.close-icon{
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+.close-icon {
+    display: none;
+}
+
+.menu-items {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    height: 500000 !important;
+}
+
+.menu-items ul {
+    list-style: none;
+    padding: 0;
+    margin: 20% 0 0 0;
+    text-align: center;
+}
+
+.menu-items ul li {
+    margin-bottom: 20px;
+}
+
+.menu-items ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-items ul li a:hover {
+    color: #00bcd4;
+}
+
+.menu-items .drop{
+    margin: 0 auto;
+    display: block;
+}
+
+.menu-items .drop > a{
+    justify-content: center;
+}
+
+.main-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 40px auto;
+    padding: 15px 30px;
+    background-color: var(--sec-color);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    border-radius: 5px;
+}
+
+.main-title::after{
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    background-color: black;
+    right: 0;
+    bottom: 0;
+    transition: 0.5s;
+}
+
+.main-title::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    left: 0;
+    bottom: 0;
+    transition: 0.5s;
+}
+
+.main-title:hover{
+    color: var(--main-color);
+    background-color: transparent;
+    padding: 15px 0;
+}
+
+.main-title:hover::after{
+    width: 50%;
+}
+
+.main-title:hover::before{
+    width: 50%;
+}
+
+
+/* End Global Rules */
+
+.header .contanier .nav-bar ul li::before{
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    width: 0;
+    right: 0;
+    height: 2px;
+    bottom: -2px;
+    transition: 0.5s;
+}
+
+.header .contanier .nav-bar ul li:hover::before{
+    width: 100%;
+}
+
+.footer .contanier .section-top .two ul li:hover {
+    transform: translate(-10px, 0);
+}
+
+.footer .contanier .section-top .three ul li:hover {
+    transform: translate(-10px, 0);
+} 
+
+.footer .section-bottom > span{
+    display: flex;
+    gap: 6px;
+}
+
+.animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+  
+.animate.active {
+    opacity: 1;
+    transform: translateY(0);
+}
